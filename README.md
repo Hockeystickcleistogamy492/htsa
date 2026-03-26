@@ -30,6 +30,8 @@ Together they tell you <em>what to do about it.</em>
 
 <p align="center">Establish the full picture before drilling into cause.</p>
 
+<div align="center">
+
 | Question | What It Captures |
 |:---:|:---:|
 | **Who** | The actor, subject, or stakeholder involved |
@@ -37,6 +39,8 @@ Together they tell you <em>what to do about it.</em>
 | **When** | The timeline — before, during, and after |
 | **Where** | The location, system, environment, or context |
 | **Why** | The surface-level, immediately apparent reason |
+
+</div>
 
 <h4 align="center">Layer 2 — Causal Chain (5 Whys)</h4>
 
@@ -69,6 +73,8 @@ Why (surface)
 
 <h3 align="center">🌐 Works Everywhere</h3>
 
+<div align="center">
+
 | Domain | Who | What | When | Where | Why |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | 🏥 Medicine | Patient | Symptom | Onset | Body system | Presenting complaint |
@@ -78,14 +84,18 @@ Why (surface)
 | ⚖️ Legal | Defendant | Act | Date | Jurisdiction | Motive |
 | 🧠 Personal | You | Decision | Moment | Context | Emotion |
 
+</div>
+
 ---
 
 <h3 align="center">🧮 The Math</h3>
 
 <p align="center">The framework is an applied graph traversal algorithm for causal inference —<br>with probability weighting, entropy reduction, and Bayesian evidence updating at every node.</p>
 
+<div align="center">
+
 | # | Concept | What It Answers |
-|:---:|---|---|
+|:---:|:---:|:---:|
 | **[01](math/01_graph_theory.md)** | Graph Theory | What is the structure of an investigation? |
 | **[02](math/02_exponential_problem_space.md)** | Exponential Problem Space | Why do investigations feel overwhelming? |
 | **[03](math/03_causal_inference.md)** | Causal Inference | How do you prove something caused something else? |
@@ -94,6 +104,8 @@ Why (surface)
 | **[06](math/06_search_algorithms.md)** | Search Algorithms | How do you move through the Why tree? |
 | **[07](math/07_cognitive_biases.md)** | Cognitive Biases | What corrupts the investigation? |
 | **[08](math/08_evidence_evaluation.md)** | Evidence Evaluation | How do you know which evidence to trust? |
+
+</div>
 
 ---
 
