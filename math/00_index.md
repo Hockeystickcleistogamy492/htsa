@@ -97,6 +97,12 @@ Each concept is a layer. They stack on top of each other:
 
 ---
 
+## Beyond the Math — Formal Proofs
+
+The math explains each concept. The **[Formal Proofs](../proofs/00_index.md)** go further — they formalize HTSA as an algorithm and prove that it terminates, finds all root causes, explores them in optimal order, converges on truth, and measurably advances with every question.
+
+---
+
 ## Back to the Framework
 
 **[Return to FRAMEWORK.md](../FRAMEWORK.md)**

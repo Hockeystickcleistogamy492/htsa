@@ -6,7 +6,7 @@
 
 ## What This Section Does
 
-Each mathematical foundation in [the math](../math/00_index.md) explains a concept and maps it to the framework. This section goes further — it defines the framework as a formal algorithm and proves that it has specific guarantees.
+The **[eight mathematical foundations](../math/00_index.md)** explain the concepts. This section goes further — it defines HTSA as a formal algorithm and proves that it has specific guarantees. The proofs build directly on the math: every theorem references the mathematical foundation it depends on.
 
 ---
 
@@ -47,4 +47,4 @@ The math is sound. The operator is the variable.
 
 ---
 
-<p align="center"><strong><a href="../math/00_index.md">← The Math</a></strong> · <strong><a href="../FRAMEWORK.md">Framework</a></strong> · <strong><a href="../README.md">README</a></strong></p>
+<p align="center"><strong><a href="../math/08_evidence_evaluation.md">← 08 Evidence Evaluation</a></strong> · <strong><a href="../math/00_index.md">The Math</a></strong> · <strong><a href="../FRAMEWORK.md">Framework</a></strong> · <strong><a href="../README.md">README</a></strong></p>

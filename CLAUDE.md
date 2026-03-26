@@ -30,6 +30,7 @@ The framework has eight mathematical foundations. Read them in order — each on
 | 7 | [math/06_search_algorithms.md](math/06_search_algorithms.md) | Search Algorithms — how to move through the Why tree |
 | 8 | [math/07_cognitive_biases.md](math/07_cognitive_biases.md) | Cognitive Biases — what corrupts the investigation |
 | 9 | [math/08_evidence_evaluation.md](math/08_evidence_evaluation.md) | Evidence Evaluation — not all evidence is equal |
+| 10 | [proofs/00_index.md](proofs/00_index.md) | Formal Proofs — provable guarantees of the algorithm |
 
 ---
 
@@ -46,5 +47,6 @@ FRAMEWORK.md
                                         └─► math/06_search_algorithms.md
                                                 └─► math/07_cognitive_biases.md
                                                         └─► math/08_evidence_evaluation.md
-                                                                └─► FRAMEWORK.md
+                                                                └─► proofs/00_index.md
+                                                                        └─► FRAMEWORK.md
 ```

@@ -34,6 +34,9 @@ assets/                ← SVG diagrams
 math/
   00_index.md          ← How the math connects
   01–08_*.md           ← Eight mathematical foundations
+proofs/
+  00_index.md          ← Proof overview and assumptions
+  01–07_*.md           ← Seven formal proofs
 ```
 
 ---
