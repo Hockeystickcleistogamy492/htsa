@@ -80,6 +80,8 @@ The framework is an applied graph traversal algorithm for causal inference — w
 | [04](math/04_information_theory.md) | Information Theory | How do you measure investigative progress? |
 | [05](math/05_bayesian_reasoning.md) | Bayesian Reasoning | How do you weigh competing causes? |
 | [06](math/06_search_algorithms.md) | Search Algorithms | How do you move through the Why tree? |
+| [07](math/07_cognitive_biases.md) | Cognitive Biases | What corrupts the investigation? |
+| [08](math/08_evidence_evaluation.md) | Evidence Evaluation | How do you know which evidence to trust? |
 
 ---
 
