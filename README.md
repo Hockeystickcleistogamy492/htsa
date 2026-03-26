@@ -31,7 +31,7 @@ Together they tell you <em>what to do about it.</em>
 <p align="center">Establish the full picture before drilling into cause.</p>
 
 | Question | What It Captures |
-|:---:|---|
+|:---:|:---:|
 | **Who** | The actor, subject, or stakeholder involved |
 | **What** | The event, problem, or incident |
 | **When** | The timeline — before, during, and after |
