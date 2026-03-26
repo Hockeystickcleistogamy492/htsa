@@ -40,6 +40,7 @@ from .core import (
 )
 from .export import to_markdown
 from .investigation import Investigation, InvestigationMode
+from .llm import ChatCompletionsClient, LLMAdvisor
 from .resolution import (
     ResolutionEngine,
     VerificationRecord,
@@ -91,4 +92,7 @@ __all__ = [
     "VerificationTracker",
     "VerificationRecord",
     "VerificationWindowType",
+    # LLM
+    "LLMAdvisor",
+    "ChatCompletionsClient",
 ]

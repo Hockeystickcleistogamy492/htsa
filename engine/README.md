@@ -25,6 +25,10 @@ Investigation (orchestrator)
 │   └── verification.py      Verification windows and learning loop
 ├── serialization.py         JSON round-trip (to_dict / from_dict)
 └── export.py                Markdown rendering matching FRAMEWORK.md templates
+├── llm/                        LLM integration (any provider)
+│   ├── client.py               Provider-agnostic chat completions client
+│   ├── prompts.py              System prompt + judgment prompt templates
+│   └── advisor.py              LLMAdvisor — fills judgment slots via LLM
 ```
 
 ## Install
@@ -146,6 +150,109 @@ inv.save_markdown("investigation.md")
 | — | `investigation.py` | Orchestrator tying all modules together |
 | — | `serialization.py` | JSON round-trip for full investigation state |
 | — | `export.py` | Markdown rendering matching FRAMEWORK.md templates |
+| `llm/` | `client.py` | Provider-agnostic chat completions HTTP client (stdlib only) |
+| `llm/` | `prompts.py` | System prompt + prompt builders for each judgment type |
+| `llm/` | `advisor.py` | LLMAdvisor — fills judgment slots, drives auto-investigation |
+
+## LLM integration
+
+The `llm/` subpackage connects **any LLM** to the engine through the OpenAI chat completions standard. Zero external dependencies — uses `urllib` from the standard library.
+
+### Any provider, one interface
+
+```python
+from htsa_engine.llm import LLMAdvisor
+
+# OpenAI
+advisor = LLMAdvisor("https://api.openai.com/v1", api_key="sk-...", model="gpt-4o")
+
+# Anthropic via OpenRouter
+advisor = LLMAdvisor("https://openrouter.ai/api/v1", api_key="sk-or-...", model="anthropic/claude-sonnet-4-20250514")
+
+# Groq
+advisor = LLMAdvisor("https://api.groq.com/openai/v1", api_key="gsk_...", model="llama-3.3-70b-versatile")
+
+# Together
+advisor = LLMAdvisor("https://api.together.xyz/v1", api_key="...", model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo")
+
+# Mistral
+advisor = LLMAdvisor("https://api.mistral.ai/v1", api_key="...", model="mistral-large-latest")
+
+# Local Ollama (no API key needed)
+advisor = LLMAdvisor("http://localhost:11434/v1", model="llama3")
+
+# Azure OpenAI
+advisor = LLMAdvisor(
+    "https://myresource.openai.azure.com/openai/deployments/gpt-4o",
+    headers={"api-key": "..."},
+)
+```
+
+### Full auto-investigation
+
+One call. All 4 layers. The LLM fills every judgment slot, the engine enforces all constraints.
+
+```python
+inv = advisor.run("API returning 500 errors since 2:47 AM, EU region only")
+
+print(f"Root causes: {[n.statement for n in inv.root_causes]}")
+print(f"Entropy: {inv.entropy:.3f}")
+inv.save("investigation.json")
+inv.save_markdown("investigation.md")
+```
+
+### Step-by-step (human drives, LLM advises)
+
+```python
+from htsa_engine import Investigation
+from htsa_engine.llm import LLMAdvisor
+
+advisor = LLMAdvisor("https://api.openai.com/v1", api_key="sk-...", model="gpt-4o")
+inv = Investigation(title="API 500 errors", pruning_threshold=0.05)
+
+# LLM extracts the 5 Ws
+situation = advisor.analyze_situation("API returning 500 errors since 2:47 AM, EU-west only")
+inv.set_situation(**situation)
+inv.complete_situation()
+
+# LLM generates hypotheses with priors
+origin = inv.start_causal_chain(inv.situation.why_surface)
+hypotheses = advisor.generate_hypotheses(inv, origin, count=3)
+for h in hypotheses:
+    inv.add_hypothesis(origin, h["statement"], h["probability"])
+
+# LLM classifies real evidence you provide
+classification = advisor.classify_evidence(
+    node_statement="Memory leak in request handler",
+    description="Heap dump shows 2.1GB cached, limit is 512MB",
+    source="Heap dump analysis",
+)
+# classification = {"tier": 1, "direction": "supports", "reasoning": "..."}
+
+# LLM evaluates depth criteria
+criteria = advisor.evaluate_depth_criteria(inv, some_node_id)
+inv.mark_root_cause(some_node_id, criteria)
+
+# LLM proposes resolution
+resolution = advisor.propose_resolution(inv, some_node_id)
+inv.resolve(some_node_id, ResolutionType(resolution["type"]), change=resolution["change"], ...)
+```
+
+### How LLMs connect to the engine
+
+The engine has a clear boundary: **structure vs. judgment**. Every engine method that needs judgment is a slot the LLM fills:
+
+| Engine Method | Judgment Slot | LLM Advisor Method |
+|---|---|---|
+| `set_situation()` | Decompose problem into 5 Ws | `analyze_situation()` |
+| `add_hypothesis()` | Generate Why + assign prior | `generate_hypotheses()` |
+| `add_evidence()` | Classify tier and direction | `classify_evidence()` |
+| `mark_root_cause()` | Evaluate 4 depth criteria | `evaluate_depth_criteria()` |
+| `resolve()` | Propose fix/mitigate/accept | `propose_resolution()` |
+| `test_fix_counterfactual()` | Would fix prevent recurrence? | `evaluate_counterfactual()` |
+| `add_verification()` | Define verification window | `propose_verification()` |
+
+The engine handles all the math (Bayesian updates, entropy, normalization, pruning). The LLM handles all the reasoning (what caused what, what evidence means, what to fix). Neither can do the other's job.
 
 ## What the engine enforces
 
@@ -164,4 +271,4 @@ inv.save_markdown("investigation.md")
 - **Interpret evidence.** You classify tier and direction; the engine calculates the math.
 - **Evaluate depth criteria.** You answer the four questions; the engine enforces that you answered them.
 
-That boundary — engine provides structure, human/LLM provides judgment — is the core design decision.
+That boundary — engine provides structure, human/LLM provides judgment — is the core design decision. The `llm/` subpackage bridges that boundary for any provider that speaks the chat completions protocol.
