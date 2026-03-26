@@ -8,6 +8,8 @@
 
 **If a root cause r exists in G with P(r) ≥ θ_prune at every ancestor along the path from v₀ to r, then HTSA will find r.**
 
+**Critical scope:** This theorem guarantees completeness *over the graph G that was constructed*. G is built by the EXPAND subroutine — which is a human operation. If the true root cause was never generated as a child node during any EXPAND step, it does not exist in G, and this theorem does not apply. HTSA is complete over the investigation space the investigator managed to construct. It cannot find causes no one thought to ask about. See the [EXPAND method in 02_algorithm.md](02_algorithm.md) for techniques to maximize coverage.
+
 ---
 
 ## Setup

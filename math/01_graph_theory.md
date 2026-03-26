@@ -85,6 +85,19 @@ The framework models investigations as DAGs (acyclic). This is a modeling choice
 3. **Document the full loop.** Record that the root cause is part of a cycle, not a terminal node. The fix may need to address the reinforcing dynamic, not just a single link.
 4. **Accept the limitation.** A DAG models the investigation's *decomposition* of the problem, not necessarily the problem's true causal structure. Cyclic systems require a DAG approximation — break the cycle where you can act.
 
+**Critical warning: the break point is a modeling assumption, not an empirical finding.** Two investigators can break the same feedback loop at different points and reach different "root causes," both technically valid. For example:
+
+```
+[Toxic culture] → [Turnover] → [Understaffing] → [Overwork] → [Toxic culture]
+
+Investigator A breaks at "Turnover"      → root cause: inadequate retention
+Investigator B breaks at "Understaffing" → root cause: insufficient hiring
+Both are valid intervention points. Neither is the "true" root cause —
+the cycle itself is the cause.
+```
+
+When you encounter a feedback loop: (a) document the full cycle before breaking it, (b) acknowledge that the break point is a choice, not a discovery, (c) consider whether the fix should target the reinforcing dynamic (e.g., breaking the feedback mechanism) rather than a single link, and (d) if multiple break points are viable, evaluate each as a separate resolution candidate in Layer 3.
+
 ---
 
 ## Key Terms

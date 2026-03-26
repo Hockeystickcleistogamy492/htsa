@@ -1,6 +1,6 @@
 <h1 align="center">How to Solve Anything</h1>
 
-<p align="center"><strong>A universal investigation framework combining the 5 Ws and 5 Whys.</strong><br>Applicable to any problem, in any discipline, at any scale.</p>
+<p align="center"><strong>A universal investigation framework combining the 5 Ws and 5 Whys.</strong><br>Applicable to any problem with decomposable causal structure — across disciplines, domains, and scales.</p>
 
 <p align="center">
 <code>SOMETHING HAPPENED → TO SOMEONE → SOMEWHERE → AT SOME POINT → FOR SOME REASON</code>

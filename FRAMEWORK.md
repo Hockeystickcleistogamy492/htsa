@@ -1,7 +1,7 @@
 <h1 align="center">SOMETHING HAPPENED → TO SOMEONE → SOMEWHERE → AT SOME POINT → FOR SOME REASON</h1>
 
 > How to Solve Anything (HTSA) — A universal investigation framework combining the 5 Ws and 5 Whys.
-> Applicable to any problem, in any discipline, at any scale.
+> Applicable to any problem with decomposable causal structure — across disciplines, domains, and scales.
 
 ---
 
@@ -9,7 +9,15 @@
 
 Most problems, across most fields, share a common anatomy. The vocabulary changes. The structure rarely does.
 
-**Scope:** The framework applies best to problems with decomposable causal structure. Some problem classes resist this model — notably wicked problems (where the problem definition is contested), emergent phenomena (where the whole is not reducible to parts), and feedback loops (where causes are circular). For these, the framework can still structure initial investigation, but its DAG model is an approximation, not an exact fit. See **[math/01_graph_theory.md](math/01_graph_theory.md)** for the feedback loop protocol.
+**Scope and limits of universality:** The framework applies to problems with decomposable causal structure — problems where identifiable causes produce identifiable effects. This covers the vast majority of investigation work across engineering, medicine, security, business, law, and personal decision-making.
+
+Some problem classes resist this model:
+- **Wicked problems** (where the problem definition itself is contested)
+- **Emergent phenomena** (where the whole is not reducible to parts — organizational culture, market dynamics, ecosystem behavior)
+- **Feedback loops** (where causes are circular — see **[math/01_graph_theory.md](math/01_graph_theory.md)** for the protocol)
+- **Problems without discrete root causes** (attractors, equilibria, and emergent properties that resist decomposition)
+
+For these, the framework can still structure initial investigation, but its DAG model is an approximation, not an exact fit. The 5 Ws remain useful for mapping the situation; the 5 Whys may terminate at a system dynamic rather than a discrete root cause. When this happens, the "Accept" resolution type (Layer 3) and the feedback loop protocol (math/01) are the appropriate tools — not forced decomposition.
 
 The **5 Ws** tell you *what happened*.
 The **5 Whys** tell you *why it happened*.
@@ -92,9 +100,24 @@ When the Why tree produces several root causes, prioritize by:
 Priority = Impact × Likelihood of recurrence × Actionability
 
 Rate each factor on a consistent scale (e.g., 1–5) before multiplying.
-Note: these factors are correlated, not independent — high-impact problems
-tend to receive more attention, making them more actionable. Use the formula
-as a ranking heuristic, not a precise score.
+
+IMPORTANT: These factors are correlated, not independent — high-impact
+problems tend to receive more attention, making them more actionable.
+Multiplication amplifies correlation artifacts:
+
+  Example of the correlation problem:
+    Root Cause A:  Impact=4, Recurrence=4, Actionability=4 → Score=64
+    Root Cause B:  Impact=5, Recurrence=3, Actionability=4 → Score=60
+
+  A and B have nearly identical practical priority, but small rating
+  differences produce a 7% gap. Worse: if high impact inflates the
+  actionability rating (because leadership pays attention), A's score
+  could jump to 80 while B stays at 60 — a 33% gap from correlation
+  alone, not from genuine priority difference.
+
+Use the formula as a ranking heuristic, not a precise score. When two
+root causes score within ~20% of each other, treat them as equal
+priority and break ties using the qualitative rules below.
 
 High impact + high recurrence + easy to change  →  Act first
 High impact + low recurrence + hard to change   →  Plan and schedule

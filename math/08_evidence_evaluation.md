@@ -23,6 +23,15 @@ Not all evidence is created equal. Four tiers, from strongest to weakest:
 │  recordings, controlled experiments (A/B    │
 │  tests). The event left a measurable        │
 │  record.                                    │
+│                                             │
+│  CAUTION: Tier 1 is strongest, not          │
+│  infallible. Instruments can lie:           │
+│  miscalibrated sensors, corrupted logs,     │
+│  clock skew in timestamps, logs that        │
+│  record what software *intended* rather     │
+│  than what *occurred*, tampered recordings. │
+│  Always validate instrument reliability     │
+│  before treating Tier 1 as ground truth.    │
 ├─────────────────────────────────────────────┤
 │  TIER 2 — Observational                     │
 │  What a witness directly saw, heard, or     │

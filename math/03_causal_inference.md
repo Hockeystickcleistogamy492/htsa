@@ -56,9 +56,9 @@ These are different. Observing that it's raining does not cause wet ground. Inte
 
 ## How This Applies to the Framework
 
-At every Why node, you are making a causal claim. That claim must meet a minimum standard:
+At every Why node, you are making a causal claim. That claim must meet a minimum standard.
 
-**The Counterfactual Test (two-stage):**
+**The Counterfactual Test** is the framework's primary causal validation tool. It operates in two stages — Stage 1 handles standard causes, Stage 2 catches overdetermined causes that naive counterfactual testing misses. **The two-stage design is a core contribution of this framework** — without Stage 2, any investigation with multiple independently sufficient causes will incorrectly discard genuine root causes. See also **[FRAMEWORK.md](../FRAMEWORK.md)** (Root Cause Interaction section) for how overdetermined causes are handled at the resolution layer.
 
 **Stage 1 — Simple counterfactual:**
 > "If this Why answer had NOT been true, would the problem still have occurred?"

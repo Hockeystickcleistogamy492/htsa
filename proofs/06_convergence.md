@@ -108,6 +108,28 @@ In investigation terms: if two potential root causes would produce almost identi
 
 ---
 
+## Practical Limitation: Finite Evidence Budgets
+
+The convergence theorem is asymptotic — it describes what happens as n → ∞. Real investigations have finite evidence budgets: limited time, limited access to data, limited ability to gather observations.
+
+When two root causes produce nearly identical observable evidence (KL divergence ≈ 0), the theoretical guarantee says convergence is "slow." In practice, with a finite evidence budget, **slow convergence is indistinguishable from non-convergence.** The investigation may end before the posterior has meaningfully separated the two hypotheses.
+
+```
+KL(r* ‖ rⱼ) ≈ 0  AND  evidence budget n is finite
+→ P(r* | E) ≈ P(rⱼ | E) at investigation close
+→ The framework cannot distinguish the true cause from the false one
+```
+
+**When this happens:**
+1. **Acknowledge it explicitly.** Label both hypotheses as "unresolved — evidence-equivalent."
+2. **Seek discriminating evidence.** The highest-value next step is finding an observation that *would* differ between the two hypotheses — this directly increases KL divergence.
+3. **Design an intervention.** If observational evidence cannot distinguish two causes, an experimental intervention (A/B test, controlled change) often can — because `P(outcome | do(r*))` and `P(outcome | do(rⱼ))` may differ even when passive observations do not.
+4. **Accept the ambiguity if necessary.** If both hypotheses lead to the same resolution action, the distinction may not matter operationally. Document the ambiguity and move to Layer 3.
+
+This limitation does not invalidate the convergence guarantee — it bounds its *practical applicability* to cases where sufficient evidence exists to create meaningful separation.
+
+---
+
 ## Required Conditions
 
 The convergence guarantee requires:

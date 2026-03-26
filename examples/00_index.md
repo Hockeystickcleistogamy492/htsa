@@ -22,6 +22,11 @@ Use them to:
 | #   | File                                                     | Domain      | Problem                                          | Key Concepts Demonstrated                                                                                                  |
 | --- | -------------------------------------------------------- | ----------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
 | 01  | [01_engineering_incident.md](01_engineering_incident.md) | Engineering | Production service returns 500 errors at 2:47 AM | Branching, convergence, Best-First search, Bayesian updating, attribution bias, evidence evaluation, Layer 4 learning loop |
+| 02  | [02_medical_diagnosis.md](02_medical_diagnosis.md)       | Medicine    | 58-year-old with sudden chest pain in the ER     | DFS under time pressure, safety-critical θ, base-rate priors, evidence tiers in clinical context, attribution bias         |
+| 03  | [03_security_breach.md](03_security_breach.md)           | Security    | Customer PII exfiltrated from SaaS database      | BFS for completeness, adversarial evidence, temporal firewall protocol, AND-causation, attribution bias                    |
+| 04  | [04_business_bottleneck.md](04_business_bottleneck.md)   | Business    | Sales cycle doubled from 45 to 90 days           | Groupthink, investigation-as-confounder, feedback loop protocol, value-separation principle, search strategy switching     |
+| 05  | [05_legal_investigation.md](05_legal_investigation.md)   | Legal       | Scaffolding collapse with multiple liable parties | BFS for multi-party liability, overdetermination (OR-causation), two-stage counterfactual, conflicting evidence, chain of custody |
+| 06  | [06_personal_decision.md](06_personal_decision.md)       | Personal    | Software engineer investigating their own burnout | Confirmation bias, anchoring defense, feedback loop, evidence tiers for self-investigation, DFS-to-BFS switch              |
 
 ---
 
