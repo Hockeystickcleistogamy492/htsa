@@ -251,7 +251,7 @@ Seven biases reliably derail investigations. Know them before you start.
 | **Confirmation bias** | Only evidence that supports the leading hypothesis is registered | Actively seek evidence that would disprove each Why answer |
 | **Availability bias** | Priors reflect recent memory, not actual base rates | Set priors from data before beginning |
 | **Attribution bias** | Why chain stops at a person instead of the system behind them | Any answer that names a person — ask Why once more |
-| **Sunk cost** | Continues down a failed branch because time was already spent | Set a pruning threshold before starting; follow it regardless |
+| **Sunk cost** | Continues down a failed branch because time was already spent | Set a pruning threshold (default: 5%) before starting; follow it regardless |
 | **Groupthink** | Surprising evidence is suppressed; entropy never drops to minimum | Assign an adversarial investigator role explicitly |
 | **Anchoring** | First hypothesis raised dominates despite evidence | Do not name a leading hypothesis before the 5 Ws are complete |
 | **Premature closure** | Investigation stops at a symptom that feels like a cause | Apply all four Depth Criteria tests before closing the Why chain |

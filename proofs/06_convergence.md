@@ -8,6 +8,8 @@
 
 **As the number of independent evidence observations increases, the posterior probability of the true root cause approaches 1, and the posterior probability of all false causes approaches 0.**
 
+**Note on multiple root causes:** When an investigation has multiple true root causes (as the branching template supports), this theorem applies independently to each branch of the Why tree. Each branch has its own set of candidate causes. Convergence occurs per-branch: within each branch, the posterior concentrates on the true cause for that branch. The theorem does not assume a single global root cause.
+
 ---
 
 ## Setup

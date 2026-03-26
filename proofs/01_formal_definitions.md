@@ -37,7 +37,7 @@ v = {
 
 ## Definition 3 — Edge
 
-An edge (u, v) ∈ E represents a causal relationship: **u caused v**, or equivalently, **v is a deeper Why answer to u**.
+An edge (u, v) ∈ E represents a causal relationship: **v is a deeper cause of u** — asking "Why is u true?" yields v as an answer. Edges point from surface toward root cause.
 
 An edge is valid if and only if it passes the **counterfactual test**:
 
@@ -75,7 +75,11 @@ e = (source, tier, timestamp, direction)
 
 where:
   source:     origin of the evidence (log, witness, measurement, etc.)
-  tier:       evidence quality tier (1 = direct/physical, 2 = documentary, 3 = testimonial)
+  tier:       evidence quality tier:
+                1 = physical/instrumental (logs, sensors, statistical analysis)
+                2 = observational (direct witness observation at time of event)
+                3 = inferential (reasoned conclusion from Tier 1 or 2 evidence)
+                4 = testimonial/reconstructive (recalled after the fact)
   timestamp:  when the evidence was collected
   direction:  SUPPORTS or CONTRADICTS the node's causal claim
 ```
@@ -124,7 +128,32 @@ summed over all active (non-pruned) leaf nodes.
 
 ---
 
-## Definition 9 — Pruning Threshold
+## Definition 9 — Resolution
+
+A resolution for a root cause r ∈ R is a tuple:
+
+```
+res(r) = (type, change, owner, deadline, priority)
+
+where:
+  type:       FIX (root cause eliminated), MITIGATE (impact reduced), or ACCEPT (risk acknowledged)
+  change:     the specific system/process/policy alteration
+  owner:      who is responsible for implementing the change
+  deadline:   when the change must be implemented
+  priority:   Impact(r) × Recurrence(r) × Actionability(r)
+```
+
+A resolution is valid if and only if it passes the **counterfactual test on the fix**:
+
+```
+"If this change had existed before the problem occurred, would the problem still have happened?"
+  IF yes → the fix targets a symptom, not the root cause. Go deeper.
+  IF no  → the fix is correctly targeted.
+```
+
+---
+
+## Definition 10 — Pruning Threshold
 
 A pruning threshold **θ** ∈ (0, 1) is set before the investigation begins. Any node whose posterior probability drops below θ is pruned:
 
@@ -144,10 +173,11 @@ A common default is θ = 0.05 (5%).
 | Node | v ∈ V | A single causal claim |
 | Edge | (u, v) ∈ E | A causal link between claims |
 | Root cause | v where children(v) = ∅ + depth criteria | The actionable end of a causal chain |
-| Evidence | e ∈ Ev(v) | Data supporting or contradicting a claim |
+| Evidence | e ∈ Ev(v) | Data supporting or contradicting a claim (4 tiers) |
 | Prior | P₀(v) | Belief before evidence |
 | Posterior | P(v \| e) | Belief after evidence |
 | Entropy | H(G) | Uncertainty remaining in the investigation |
+| Resolution | res(r) = (type, change, owner, deadline, priority) | The action taken for each root cause |
 | Pruning threshold | θ | Minimum probability to continue exploring |
 
 ---

@@ -15,14 +15,18 @@ INPUT
   θ_prune    pruning threshold (default: 0.05)
 
 OUTPUT
-  R          set of identified root causes
+  R          set of identified root causes with resolutions
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ── LAYER 1: SITUATION MAP ──
 
 1.   INITIALIZE
      Run 5 Ws → construct origin node v₀
      Set prior P₀(v₀) from base rates
      OPEN ← priority queue containing {v₀}, ordered by P(v) descending
      R ← ∅
+
+  ── LAYER 2: CAUSAL CHAIN ──
 
 2.   WHILE OPEN ≠ ∅:
 
@@ -64,7 +68,31 @@ OUTPUT
            INSERT(OPEN, c)
          // Depth criteria not met — continue exploring deeper
 
-12.  RETURN R
+  ── LAYER 3: RESOLUTION ──
+
+12.  FOR EACH r ∈ R:
+       RESOLVE(r)
+       // Assign: fix, mitigate, or accept
+       // Run counterfactual test on the proposed fix:
+       //   "If this fix had existed, would the problem still have occurred?"
+       //   If yes → fix targets a symptom, go deeper (return r to OPEN)
+       //   If no  → fix is correctly targeted
+       // Assign owner and deadline
+       // Priority = Impact(r) × Recurrence(r) × Actionability(r)
+
+  ── LAYER 4: VERIFICATION & LEARNING ──
+
+13.  FOR EACH r ∈ R:
+       IMPLEMENT fix for r
+       IF VERIFY(r) = false:
+         // Problem recurred → root cause identification was incomplete
+         // Return r to OPEN as a new origin node (recursive property)
+         OPEN ← {r}
+         GOTO step 2
+       // Fix confirmed → update priors for next investigation
+       UPDATE_PRIORS(r)
+
+14.  RETURN R
 ```
 
 ---
@@ -73,18 +101,20 @@ OUTPUT
 
 Each step maps to a specific mathematical foundation:
 
-| Step | Operation | Math Foundation |
-|:---:|---|---|
-| 1 | Initialize from 5 Ws | **[01 Graph Theory](../math/01_graph_theory.md)** — construct the DAG |
-| 1 | Set priors | **[05 Bayesian Reasoning](../math/05_bayesian_reasoning.md)** — prior assignment |
-| 3 | Select highest-probability node | **[06 Search Algorithms](../math/06_search_algorithms.md)** — best-first search |
-| 4 | Expand node | **[02 Exponential Problem Space](../math/02_exponential_problem_space.md)** — branching |
-| 6 | Gather evidence | **[08 Evidence Evaluation](../math/08_evidence_evaluation.md)** — evidence tiers |
-| 7 | Counterfactual test | **[03 Causal Inference](../math/03_causal_inference.md)** — do-calculus |
-| 8 | Bayesian update | **[05 Bayesian Reasoning](../math/05_bayesian_reasoning.md)** — posterior computation |
-| 9 | Prune low-probability | **[04 Information Theory](../math/04_information_theory.md)** — entropy reduction |
-| 10 | Depth criteria | **[03 Causal Inference](../math/03_causal_inference.md)** — root cause identification |
-| All | Bias resistance | **[07 Cognitive Biases](../math/07_cognitive_biases.md)** — operator discipline |
+| Step | Operation | Layer | Math Foundation |
+|:---:|---|:---:|---|
+| 1 | Initialize from 5 Ws | 1 | **[01 Graph Theory](../math/01_graph_theory.md)** — construct the DAG |
+| 1 | Set priors | 1 | **[05 Bayesian Reasoning](../math/05_bayesian_reasoning.md)** — prior assignment |
+| 3 | Select highest-probability node | 2 | **[06 Search Algorithms](../math/06_search_algorithms.md)** — best-first search |
+| 4 | Expand node | 2 | **[02 Exponential Problem Space](../math/02_exponential_problem_space.md)** — branching |
+| 6 | Gather evidence | 2 | **[08 Evidence Evaluation](../math/08_evidence_evaluation.md)** — evidence tiers |
+| 7 | Counterfactual test | 2 | **[03 Causal Inference](../math/03_causal_inference.md)** — do-calculus |
+| 8 | Bayesian update | 2 | **[05 Bayesian Reasoning](../math/05_bayesian_reasoning.md)** — posterior computation |
+| 9 | Prune low-probability | 2 | **[04 Information Theory](../math/04_information_theory.md)** — entropy reduction |
+| 10 | Depth criteria | 2 | **[03 Causal Inference](../math/03_causal_inference.md)** — root cause identification |
+| 12 | Resolve root causes | 3 | **[03 Causal Inference](../math/03_causal_inference.md)** — counterfactual test on fix |
+| 13 | Verify and update priors | 4 | **[05 Bayesian Reasoning](../math/05_bayesian_reasoning.md)** — prior update for next investigation |
+| All | Bias resistance | All | **[07 Cognitive Biases](../math/07_cognitive_biases.md)** — operator discipline |
 
 ---
 
@@ -129,6 +159,40 @@ DEPTH_CRITERIA(c):
   (c) ← SYSTEM_BOUNDARY(c)       // Is the cause within control?
   (d) ← DIMINISHING_RETURNS(c)   // Would going deeper change the action?
   RETURN (a) ∧ (b) ∧ (c) ∧ ¬(d)
+```
+
+### RESOLVE(r)
+
+```
+RESOLVE(r):
+  Determine type: FIX, MITIGATE, or ACCEPT
+  Propose concrete change
+  Run counterfactual test on proposed fix:
+    "If this fix had existed before the problem, would the problem still have occurred?"
+    IF yes → fix targets a symptom, not the root cause → return r to OPEN
+    IF no  → fix is correctly targeted → proceed
+  Assign owner and deadline
+  Compute priority: Impact(r) × Recurrence(r) × Actionability(r)
+```
+
+### VERIFY(r)
+
+```
+VERIFY(r):
+  After fix is implemented:
+    Has the problem recurred?        → IF yes: RETURN false
+    Does monitoring confirm the fix? → IF no:  RETURN false
+  RETURN true
+```
+
+### UPDATE_PRIORS(r)
+
+```
+UPDATE_PRIORS(r):
+  Record: were base rates accurate?       → adjust for next investigation
+  Record: which branches were pruned?     → update prior for that cause class
+  Record: was the first hypothesis correct? → track over time for anchoring detection
+  Record: any surprises?                  → document explicitly (highest-value signal)
 ```
 
 ---
