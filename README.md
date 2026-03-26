@@ -9,12 +9,12 @@
 ---
 
 <p align="center">
-<strong><a href="FRAMEWORK.md">Framework</a></strong> · <strong><a href="math/00_index.md">The Math</a></strong> · <strong><a href="DIAGRAMS.md">Diagrams</a></strong>
+<strong><a href="FRAMEWORK.md">📋 Framework</a></strong> · <strong><a href="math/00_index.md">🧮 The Math</a></strong> · <strong><a href="DIAGRAMS.md">📊 Diagrams</a></strong>
 </p>
 
 ---
 
-## The Core Insight
+<h2 align="center">💡 The Core Insight</h2>
 
 Every problem in every field has the same anatomy. The vocabulary changes. The structure never does.
 
@@ -24,9 +24,9 @@ Together they tell you *what to do about it.*
 
 ---
 
-## The Four Layers
+<h2 align="center">🔍 The Four Layers</h2>
 
-### Layer 1 — Situation Map (5 Ws)
+<h3 align="center">Layer 1 — Situation Map (5 Ws)</h3>
 
 Establish the full picture before drilling into cause.
 
@@ -38,7 +38,7 @@ Establish the full picture before drilling into cause.
 | **Where** | The location, system, environment, or context |
 | **Why** | The surface-level, immediately apparent reason |
 
-### Layer 2 — Causal Chain (5 Whys)
+<h3 align="center">Layer 2 — Causal Chain (5 Whys)</h3>
 
 Start at the surface Why. Ask why again. Keep going until you hit something you can actually change.
 
@@ -53,33 +53,33 @@ Why (surface)
 
 Whys can and should branch. Real problems are rarely single-cause.
 
-### Layer 3 — Resolution
+<h3 align="center">Layer 3 — Resolution</h3>
 
 Map each root cause to a concrete change. Apply the counterfactual test:
 > "If this change had existed before the problem occurred, would the problem still have happened?"
 
 Each root cause is either **fixed**, **mitigated**, or **accepted**.
 
-### Layer 4 — Verification and Learning
+<h3 align="center">Layer 4 — Verification and Learning</h3>
 
 Confirm the fix worked. Update your priors. The framework compounds over time — but only if learning is explicit.
 
 ---
 
-## Works Everywhere
+<h2 align="center">🌐 Works Everywhere</h2>
 
 | Domain | Who | What | When | Where | Why |
 |---|---|---|---|---|---|
-| Medicine | Patient | Symptom | Onset | Body system | Presenting complaint |
-| Security | Threat actor | Breach | Attack window | Vulnerability | Attack vector |
-| Engineering | System | Failure | Timeline | Component | Error message |
-| Business | Team / Process | Bottleneck | Quarter | Department | Stated reason |
-| Legal | Defendant | Act | Date | Jurisdiction | Motive |
-| Personal | You | Decision | Moment | Context | Emotion |
+| 🏥 Medicine | Patient | Symptom | Onset | Body system | Presenting complaint |
+| 🔒 Security | Threat actor | Breach | Attack window | Vulnerability | Attack vector |
+| ⚙️ Engineering | System | Failure | Timeline | Component | Error message |
+| 📈 Business | Team / Process | Bottleneck | Quarter | Department | Stated reason |
+| ⚖️ Legal | Defendant | Act | Date | Jurisdiction | Motive |
+| 🧠 Personal | You | Decision | Moment | Context | Emotion |
 
 ---
 
-## The Math
+<h2 align="center">📐 The Math</h2>
 
 The framework is an applied graph traversal algorithm for causal inference — with probability weighting, entropy reduction, and Bayesian evidence updating at every node.
 
@@ -96,7 +96,7 @@ The framework is an applied graph traversal algorithm for causal inference — w
 
 ---
 
-## Rules
+<h2 align="center">📏 Rules</h2>
 
 1. **Map before you drill.** Complete the 5 Ws before starting the 5 Whys.
 2. **Evidence at every node.** An assertion without evidence is a guess.
