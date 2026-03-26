@@ -9,7 +9,7 @@ The math is always running underneath. These documents make it visible.
 
 ---
 
-## The Six Mathematical Foundations
+## The Eight Mathematical Foundations
 
 | # | Concept | What It Answers |
 |---|---|---|
@@ -19,6 +19,8 @@ The math is always running underneath. These documents make it visible.
 | [04](04_information_theory.md) | **Information Theory** | How do you measure investigative progress? |
 | [05](05_bayesian_reasoning.md) | **Bayesian Reasoning** | How do you weigh competing causes? |
 | [06](06_search_algorithms.md) | **Search Algorithms** | How do you move through the Why tree? |
+| [07](07_cognitive_biases.md) | **Cognitive Biases** | What corrupts the investigation? |
+| [08](08_evidence_evaluation.md) | **Evidence Evaluation** | How do you know which evidence to trust? |
 
 ---
 
@@ -28,6 +30,12 @@ Each concept is a layer. They stack on top of each other:
 
 ```
 ┌──────────────────────────────────────────────┐
+│         EVIDENCE EVALUATION                  │  What counts as proof
+│  Tiers · Reliability · Validity · Chain      │
+├──────────────────────────────────────────────┤
+│         COGNITIVE BIASES                     │  What corrupts the mind
+│  Confirmation · Anchoring · Groupthink       │
+├──────────────────────────────────────────────┤
 │         SEARCH ALGORITHMS                    │  How you move
 │  DFS · BFS · Best-First · Backtracking       │
 ├──────────────────────────────────────────────┤
@@ -64,6 +72,10 @@ Each concept is a layer. They stack on top of each other:
 
 **Search Algorithms** — DFS goes deep fast, BFS goes wide first, Best-First follows probability — choose based on the problem.
 
+**Cognitive Biases** — The math assumes a rational agent; biases break that assumption at every stage — know them or they win.
+
+**Evidence Evaluation** — Not all evidence is equal; quality determines whether the investigation converges on truth or on a plausible fiction.
+
 ---
 
 ## How They Map to the Framework
@@ -80,6 +92,8 @@ Each concept is a layer. They stack on top of each other:
 | Two branches pointing to the same cause | Convergence (Graph Theory) |
 | Going in circles | Cycle detection (Search) |
 | Stopping at the right depth | Entropy minimum (Info Theory) |
+| Investigation reaching the wrong conclusion | Cognitive Biases |
+| Closing a Why node as a finding | Evidence Evaluation |
 
 ---
 

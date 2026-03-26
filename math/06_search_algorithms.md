@@ -152,4 +152,4 @@ This is circular reasoning. Both DFS and BFS detect cycles by tracking visited n
 
 ---
 
-**← Previous** [05 — Bayesian Reasoning](05_bayesian_reasoning.md) · **↑ Back to Framework** [FRAMEWORK.md](../FRAMEWORK.md)
+**← Previous** [05 — Bayesian Reasoning](05_bayesian_reasoning.md) · **Next →** [07 — Cognitive Biases](07_cognitive_biases.md)
