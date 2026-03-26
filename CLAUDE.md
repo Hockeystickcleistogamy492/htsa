@@ -15,19 +15,21 @@ Applicable to any problem, in any discipline, at any scale.
 
 ## The Math
 
-The framework has six mathematical foundations. Read them in order — each one builds on the last.
+The framework has eight mathematical foundations. Read them in order — each one builds on the last.
 
 [math/](math/) — Math foundations folder
 
 | Step | File | Concept |
 |---|---|---|
-| 1 | [math/00_index.md](math/00_index.md) | Index — how the six concepts connect |
+| 1 | [math/00_index.md](math/00_index.md) | Index — how the eight concepts connect |
 | 2 | [math/01_graph_theory.md](math/01_graph_theory.md) | Graph Theory — the structure of every investigation |
 | 3 | [math/02_exponential_problem_space.md](math/02_exponential_problem_space.md) | Exponential Problem Space — why structure matters |
 | 4 | [math/03_causal_inference.md](math/03_causal_inference.md) | Causal Inference — proving what caused what |
 | 5 | [math/04_information_theory.md](math/04_information_theory.md) | Information Theory — measuring investigative progress |
 | 6 | [math/05_bayesian_reasoning.md](math/05_bayesian_reasoning.md) | Bayesian Reasoning — weighing competing causes |
 | 7 | [math/06_search_algorithms.md](math/06_search_algorithms.md) | Search Algorithms — how to move through the Why tree |
+| 8 | [math/07_cognitive_biases.md](math/07_cognitive_biases.md) | Cognitive Biases — what corrupts the investigation |
+| 9 | [math/08_evidence_evaluation.md](math/08_evidence_evaluation.md) | Evidence Evaluation — not all evidence is equal |
 
 ---
 
@@ -42,5 +44,7 @@ FRAMEWORK.md
                             └─► math/04_information_theory.md
                                   └─► math/05_bayesian_reasoning.md
                                         └─► math/06_search_algorithms.md
-                                                └─► FRAMEWORK.md
+                                                └─► math/07_cognitive_biases.md
+                                                        └─► math/08_evidence_evaluation.md
+                                                                └─► FRAMEWORK.md
 ```
