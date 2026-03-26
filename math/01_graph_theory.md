@@ -1,4 +1,4 @@
-# Graph Theory
+<h1 align="center">Graph Theory</h1>
 
 > The Why tree is not a metaphor. It is a graph.
 
@@ -26,16 +26,16 @@ Every investigation you run using **How to Solve Anything (HTSA)** is a directed
 ## Visual
 
 ```
-[Surface Why]
-      │
-      ▼
-  [Why 1a] ──────────────► [Why 1b]
-      │                        │
-      ▼                        ▼
-  [Why 2a]                 [Why 2b]
-      │                     /     \
-      ▼                    ▼       ▼
-[ROOT CAUSE A]      [ROOT CAUSE B] [ROOT CAUSE C]
+         [Surface Why]
+           /       \
+          ▼         ▼
+     [Why 1a]    [Why 1b]
+        │          /    \
+        ▼         ▼      ▼
+    [Why 2a]  [Why 2b]  [Why 2c]
+        │        │        │
+        ▼        ▼        ▼
+  [ROOT A]   [ROOT B]  [ROOT C]
 ```
 
 Each box is a node. Each arrow is a directed edge. The whole structure is the graph.
@@ -74,7 +74,7 @@ When two independent branches both lead to the same root cause, that is **not a 
 | **Node** | A Why answer or root cause |
 | **Edge** | A causal link between two nodes |
 | **DAG** | Directed Acyclic Graph — direction matters, no loops |
-| **Root node** | The starting point (surface Why) |
+| **Origin node** | The starting point (surface Why) |
 | **Leaf node** | The end point (root cause) |
 | **Convergent node** | A node reached by two or more independent paths |
 | **Path** | A sequence of nodes from surface to root cause |
@@ -82,4 +82,4 @@ When two independent branches both lead to the same root cause, that is **not a 
 
 ---
 
-**← Previous** [00 — Index](00_index.md) · **Next →** [02 — Exponential Problem Space](02_exponential_problem_space.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="00_index.md">00 — Index</a></strong> · <strong>Next →</strong> <strong><a href="02_exponential_problem_space.md">02 — Exponential Problem Space</a></strong></p>

@@ -1,4 +1,4 @@
-# Bayesian Reasoning
+<h1 align="center">Bayesian Reasoning</h1>
 
 > You do not find the truth all at once. You update toward it, one piece of evidence at a time.
 
@@ -68,7 +68,7 @@ A good investigator does not start with equal priors on all hypotheses. They use
 1. Set priors on all hypotheses (branches)
 2. Gather evidence at the current Why node
 3. Update probabilities using Bayes' theorem
-4. Prune low-probability branches (below threshold)
+4. Prune low-probability branches (below threshold — a common default is 5%; set this before starting)
 5. Follow highest-probability branch
 6. Repeat until one hypothesis dominates
 ```
@@ -120,4 +120,4 @@ As evidence accumulates, posteriors converge — the probabilities bunch up arou
 
 ---
 
-**← Previous** [04 — Information Theory](04_information_theory.md) · **Next →** [06 — Search Algorithms](06_search_algorithms.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="04_information_theory.md">04 — Information Theory</a></strong> · <strong>Next →</strong> <strong><a href="06_search_algorithms.md">06 — Search Algorithms</a></strong></p>

@@ -1,4 +1,4 @@
-# How to Solve Anything
+<h1 align="center">How to Solve Anything</h1>
 
 > SOMETHING HAPPENED → TO SOMEONE → SOMEWHERE → AT SOME POINT → FOR SOME REASON
 
@@ -6,6 +6,8 @@
 Applicable to any problem, in any discipline, at any scale.
 
 ![How to Solve Anything — Framework Diagram](diagram.svg)
+
+![HTSA — The Algorithm](algorithm.svg)
 
 ---
 
@@ -76,21 +78,21 @@ The framework is an applied graph traversal algorithm for causal inference — w
 
 | # | Concept | What It Answers |
 |---|---|---|
-| [01](math/01_graph_theory.md) | Graph Theory | What is the structure of an investigation? |
-| [02](math/02_exponential_problem_space.md) | Exponential Problem Space | Why do investigations feel overwhelming? |
-| [03](math/03_causal_inference.md) | Causal Inference | How do you prove something caused something else? |
-| [04](math/04_information_theory.md) | Information Theory | How do you measure investigative progress? |
-| [05](math/05_bayesian_reasoning.md) | Bayesian Reasoning | How do you weigh competing causes? |
-| [06](math/06_search_algorithms.md) | Search Algorithms | How do you move through the Why tree? |
-| [07](math/07_cognitive_biases.md) | Cognitive Biases | What corrupts the investigation? |
-| [08](math/08_evidence_evaluation.md) | Evidence Evaluation | How do you know which evidence to trust? |
+| **[01](math/01_graph_theory.md)** | Graph Theory | What is the structure of an investigation? |
+| **[02](math/02_exponential_problem_space.md)** | Exponential Problem Space | Why do investigations feel overwhelming? |
+| **[03](math/03_causal_inference.md)** | Causal Inference | How do you prove something caused something else? |
+| **[04](math/04_information_theory.md)** | Information Theory | How do you measure investigative progress? |
+| **[05](math/05_bayesian_reasoning.md)** | Bayesian Reasoning | How do you weigh competing causes? |
+| **[06](math/06_search_algorithms.md)** | Search Algorithms | How do you move through the Why tree? |
+| **[07](math/07_cognitive_biases.md)** | Cognitive Biases | What corrupts the investigation? |
+| **[08](math/08_evidence_evaluation.md)** | Evidence Evaluation | How do you know which evidence to trust? |
 
 ---
 
 ## Start Here
 
-- [FRAMEWORK.md](FRAMEWORK.md) — The complete framework with templates
-- [math/00_index.md](math/00_index.md) — How the math connects
+- **[FRAMEWORK.md](FRAMEWORK.md)** — The complete framework with templates
+- **[math/00_index.md](math/00_index.md)** — How the math connects
 
 ---
 

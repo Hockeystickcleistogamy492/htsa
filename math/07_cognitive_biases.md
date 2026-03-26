@@ -1,4 +1,4 @@
-# Cognitive Biases
+<h1 align="center">Cognitive Biases</h1>
 
 > The framework is only as good as the mind running it. Biases corrupt the investigation before the first Why is asked.
 
@@ -91,7 +91,7 @@ The correct tree continues:
                        └──► ROOT CAUSE: systemic gap
 ```
 
-**Countermeasure:** Any Why answer that names a person is not a root cause. Always ask one more Why: "Why was the person in a position to cause this?" The root cause is almost always a system condition, not a person.
+**Countermeasure:** Any Why answer that names a person is rarely a root cause — always ask one more Why: "Why was the person in a position to cause this?" The root cause is almost always a system condition, not a person. (Exception: deliberate acts — fraud, sabotage, targeted attacks — where the person's intent *is* the cause. Even then, ask whether a systemic control should have prevented it.)
 
 ---
 
@@ -228,4 +228,4 @@ The best defense is the counterfactual test, applied at every node, by a team th
 
 ---
 
-**← Previous** [06 — Search Algorithms](06_search_algorithms.md) · **Next →** [08 — Evidence Evaluation](08_evidence_evaluation.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="06_search_algorithms.md">06 — Search Algorithms</a></strong> · <strong>Next →</strong> <strong><a href="08_evidence_evaluation.md">08 — Evidence Evaluation</a></strong></p>

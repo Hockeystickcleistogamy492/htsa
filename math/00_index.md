@@ -1,4 +1,4 @@
-# The Math Behind the Framework
+<h1 align="center">The Math Behind the Framework</h1>
 
 > SOMETHING HAPPENED → TO SOMEONE → SOMEWHERE → AT SOME POINT → FOR SOME REASON
 
@@ -13,14 +13,14 @@ The math is always running underneath. These documents make it visible.
 
 | # | Concept | What It Answers |
 |---|---|---|
-| [01](01_graph_theory.md) | **Graph Theory** | What is the structure of an investigation? |
-| [02](02_exponential_problem_space.md) | **Exponential Problem Space** | Why do investigations feel overwhelming? |
-| [03](03_causal_inference.md) | **Causal Inference** | How do you prove something caused something else? |
-| [04](04_information_theory.md) | **Information Theory** | How do you measure investigative progress? |
-| [05](05_bayesian_reasoning.md) | **Bayesian Reasoning** | How do you weigh competing causes? |
-| [06](06_search_algorithms.md) | **Search Algorithms** | How do you move through the Why tree? |
-| [07](07_cognitive_biases.md) | **Cognitive Biases** | What corrupts the investigation? |
-| [08](08_evidence_evaluation.md) | **Evidence Evaluation** | How do you know which evidence to trust? |
+| **[01](01_graph_theory.md)** | **Graph Theory** | What is the structure of an investigation? |
+| **[02](02_exponential_problem_space.md)** | **Exponential Problem Space** | Why do investigations feel overwhelming? |
+| **[03](03_causal_inference.md)** | **Causal Inference** | How do you prove something caused something else? |
+| **[04](04_information_theory.md)** | **Information Theory** | How do you measure investigative progress? |
+| **[05](05_bayesian_reasoning.md)** | **Bayesian Reasoning** | How do you weigh competing causes? |
+| **[06](06_search_algorithms.md)** | **Search Algorithms** | How do you move through the Why tree? |
+| **[07](07_cognitive_biases.md)** | **Cognitive Biases** | What corrupts the investigation? |
+| **[08](08_evidence_evaluation.md)** | **Evidence Evaluation** | How do you know which evidence to trust? |
 
 ---
 
@@ -99,8 +99,8 @@ Each concept is a layer. They stack on top of each other:
 
 ## Back to the Framework
 
-[Return to FRAMEWORK.md](../FRAMEWORK.md)
+**[Return to FRAMEWORK.md](../FRAMEWORK.md)**
 
 ---
 
-**Next →** [01 — Graph Theory](01_graph_theory.md)
+<p align="center"><strong>Next →</strong> <strong><a href="01_graph_theory.md">01 — Graph Theory</a></strong></p>

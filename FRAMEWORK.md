@@ -1,4 +1,4 @@
-# SOMETHING HAPPENED → TO SOMEONE → SOMEWHERE → AT SOME POINT → FOR SOME REASON
+<h1 align="center">SOMETHING HAPPENED → TO SOMEONE → SOMEWHERE → AT SOME POINT → FOR SOME REASON</h1>
 
 > How to Solve Anything (HTSA) — A universal investigation framework combining the 5 Ws and 5 Whys.
 > Applicable to any problem, in any discipline, at any scale.
@@ -256,7 +256,7 @@ Seven biases reliably derail investigations. Know them before you start.
 | **Anchoring** | First hypothesis raised dominates despite evidence | Do not name a leading hypothesis before the 5 Ws are complete |
 | **Premature closure** | Investigation stops at a symptom that feels like a cause | Apply all four Depth Criteria tests before closing the Why chain |
 
-Full treatment: [math/07_cognitive_biases.md](math/07_cognitive_biases.md)
+Full treatment: **[math/07_cognitive_biases.md](math/07_cognitive_biases.md)**
 
 ---
 

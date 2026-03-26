@@ -1,4 +1,4 @@
-# Evidence Evaluation
+<h1 align="center">Evidence Evaluation</h1>
 
 > An assertion without evidence is a guess. But not all evidence is equal. Knowing the difference is what separates a strong investigation from a lucky one.
 
@@ -20,7 +20,9 @@ Not all evidence is created equal. Four tiers, from strongest to weakest:
 ┌─────────────────────────────────────────────┐
 │  TIER 1 — Physical / Instrumental           │
 │  Direct measurement, logs, sensor data,     │
-│  recordings. The event left a record.       │
+│  recordings, statistical analysis (A/B      │
+│  tests, regression). The event left a       │
+│  measurable record.                         │
 ├─────────────────────────────────────────────┤
 │  TIER 2 — Observational                     │
 │  What a witness directly saw, heard, or     │
@@ -209,7 +211,9 @@ Testimonial evidence passed through multiple people before it reaches you. Each 
 ### Recency contamination
 Evidence gathered after the investigation has already developed a leading hypothesis is systematically biased. The people providing it know what you are looking for.
 
-**Defense:** Gather raw evidence before forming and sharing hypotheses. Lock the evidence set before forming conclusions.
+**Important distinction:** This does not contradict Bayesian iterative evidence gathering (see **[05 Bayesian Reasoning](05_bayesian_reasoning.md)**). Forming hypotheses and then seeking evidence is correct — that is how investigation works. The trap is *filtering* evidence to confirm the hypothesis: asking leading questions, ignoring contradicting data, or only looking where you expect to find support. Gather evidence that could distinguish between hypotheses, not evidence that confirms the leading one.
+
+**Defense:** Gather raw evidence before forming and sharing hypotheses. Lock the evidence set before forming conclusions. When gathering evidence iteratively, always seek evidence that could *disprove* the leading hypothesis, not just confirm it.
 
 ---
 
@@ -230,4 +234,4 @@ Evidence gathered after the investigation has already developed a leading hypoth
 
 ---
 
-**← Previous** [07 — Cognitive Biases](07_cognitive_biases.md) · **↑ Back to Framework** [FRAMEWORK.md](../FRAMEWORK.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="07_cognitive_biases.md">07 — Cognitive Biases</a></strong> · <strong>↑ Back to Framework</strong> <strong><a href="../FRAMEWORK.md">FRAMEWORK.md</a></strong></p>

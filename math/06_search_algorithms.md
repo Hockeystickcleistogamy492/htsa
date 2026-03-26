@@ -1,4 +1,4 @@
-# Search Algorithms
+<h1 align="center">Search Algorithms</h1>
 
 > How you walk the Why tree is not arbitrary. It is a decision with consequences.
 
@@ -97,9 +97,9 @@ A third option: combine BFS and DFS using **priority**. At each step, follow the
       └──► [Why 1c]  P = 0.10
 ```
 
-This is called **Best-First Search**. It is the most efficient strategy when you have evidence to assign probabilities.
+This is called **Best-First Search** (greedy). It picks the most promising node based solely on a heuristic — in this case, Bayesian probability or information gain. It is the most efficient strategy when you have evidence to assign probabilities.
 
-**A\* Search** is the most famous best-first algorithm — used in navigation, game AI, and robotics. The same logic applies to investigation: always move toward the most likely root cause, using evidence to update priorities at each step.
+**A\* Search** extends Best-First by adding **cost-so-far** to the heuristic. In investigation terms: A\* accounts for both how likely a root cause is *and* how much time and resources you have already spent on that path. A high-probability branch that has consumed days of investigation may be deprioritized in favor of a moderately-probable branch that can be resolved quickly. A\* is optimal when you have both probability estimates and resource constraints.
 
 ---
 
@@ -152,4 +152,4 @@ This is circular reasoning. Both DFS and BFS detect cycles by tracking visited n
 
 ---
 
-**← Previous** [05 — Bayesian Reasoning](05_bayesian_reasoning.md) · **Next →** [07 — Cognitive Biases](07_cognitive_biases.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="05_bayesian_reasoning.md">05 — Bayesian Reasoning</a></strong> · <strong>Next →</strong> <strong><a href="07_cognitive_biases.md">07 — Cognitive Biases</a></strong></p>

@@ -1,4 +1,4 @@
-# Causal Inference
+<h1 align="center">Causal Inference</h1>
 
 > Correlation tells you what moves together. Causation tells you what actually caused what. These are not the same thing.
 
@@ -106,4 +106,4 @@ Both the deploy and the crash correlate. But the real cause is the traffic spike
 
 ---
 
-**← Previous** [02 — Exponential Problem Space](02_exponential_problem_space.md) · **Next →** [04 — Information Theory](04_information_theory.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="02_exponential_problem_space.md">02 — Exponential Problem Space</a></strong> · <strong>Next →</strong> <strong><a href="04_information_theory.md">04 — Information Theory</a></strong></p>

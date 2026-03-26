@@ -1,4 +1,4 @@
-# Exponential Problem Space
+<h1 align="center">Exponential Problem Space</h1>
 
 > Investigations feel overwhelming because the problem space grows exponentially. This is not a feeling. It is math.
 
@@ -25,13 +25,19 @@ Level 5:  32 nodes
 **Formula:**
 
 ```
-Possible paths = branches^depth
-             2^5 = 32
+Leaf nodes (possible root causes) = b^d
+                               2^5 = 32
+
+Total nodes in the tree = (b^(d+1) - 1) / (b - 1)
+                        = (2^6 - 1) / 1 = 63
 ```
+
+The cognitive burden is the *total* node count — 63 things to track, not just the 32 endpoints. This is why structure matters.
 
 If each Why branches into **3**:
 ```
 3^5 = 243 possible root causes
+Total nodes = (3^6 - 1) / 2 = 364
 ```
 
 ---
@@ -101,4 +107,4 @@ The framework's job is to reduce **b** through evidence and reduce **d** by stop
 
 ---
 
-**← Previous** [01 — Graph Theory](01_graph_theory.md) · **Next →** [03 — Causal Inference](03_causal_inference.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="01_graph_theory.md">01 — Graph Theory</a></strong> · <strong>Next →</strong> <strong><a href="03_causal_inference.md">03 — Causal Inference</a></strong></p>

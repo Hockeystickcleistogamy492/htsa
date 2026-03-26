@@ -1,4 +1,4 @@
-# Information Theory
+<h1 align="center">Information Theory</h1>
 
 > Every Why answer reduces uncertainty. That is not a metaphor — it is the definition of information.
 
@@ -60,7 +60,7 @@ A Why answer that eliminates one unlikely possibility has low information gain.
 ## What Makes a High-Value Why Question
 
 A Why question is high-value if:
-- It can divide the possibility space roughly in half (maximum entropy reduction per question)
+- It can divide the possibility space roughly in half (maximum entropy reduction per question, assuming equal priors — see **[05 Bayesian Reasoning](05_bayesian_reasoning.md)** for the weighted version with non-uniform priors)
 - The answer is verifiable with evidence
 - It rules in or rules out major branches of the tree
 
@@ -116,4 +116,4 @@ Evidence is information. Every piece of evidence you attach to a Why node is a *
 
 ---
 
-**← Previous** [03 — Causal Inference](03_causal_inference.md) · **Next →** [05 — Bayesian Reasoning](05_bayesian_reasoning.md)
+<p align="center"><strong>← Previous</strong> <strong><a href="03_causal_inference.md">03 — Causal Inference</a></strong> · <strong>Next →</strong> <strong><a href="05_bayesian_reasoning.md">05 — Bayesian Reasoning</a></strong></p>
