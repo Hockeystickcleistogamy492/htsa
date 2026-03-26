@@ -174,6 +174,13 @@ EXPAND is the most consequential step — the investigation can only find causes
 5. ADVERSARIAL GENERATION — assign one person to ask:
    "What cause would we NOT want to find?"
    This surfaces politically uncomfortable but real causes.
+
+6. PERSPECTIVE ROTATION — for contested or value-laden domains:
+   "How would [different stakeholder] describe the cause at this level?"
+   Rotate through 2-3 distinct perspectives. Each perspective may
+   generate children invisible from other viewpoints.
+   Use when: investigation involves multiple affected parties,
+   political/organizational causes, or contested problem definitions.
 ```
 
 The goal is not exhaustive enumeration (impossible), but structured coverage across cause categories. A single-category EXPAND (e.g., only technical causes) will miss entire branches.
@@ -182,9 +189,19 @@ The goal is not exhaustive enumeration (impossible), but structured coverage acr
 
 ```
 COUNTERFACTUAL_TEST(c, e):
+  // Stage 1 — Simple counterfactual
   Ask: "If c had NOT been true, would the problem still have occurred?"
-  IF yes  → RETURN false    // c is not a genuine cause
   IF no   → RETURN true     // c is a genuine causal factor
+
+  // Stage 2 — Contingent counterfactual (overdetermination check)
+  // Triggered only when Stage 1 returns yes
+  FOR EACH other active cause c′ in the Why tree (c′ ≠ c):
+    Ask: "If c had NOT been true AND c′ had ALSO not been true,
+          would the problem still have occurred?"
+    IF no → FLAG(c, c′) as overdetermined (OR-causation)
+            RETURN true   // c IS a genuine cause, masked by c′
+  // All combinations still return yes
+  RETURN false             // c is genuinely not a cause
 ```
 
 ### BAYESIAN_UPDATE(P, e)

@@ -47,6 +47,8 @@ An edge is valid if and only if it passes the **counterfactual test**:
 
 If removing cause u does not change the probability of the effect, the edge is spurious and should be removed.
 
+**Overdetermination note:** When multiple causes are each independently sufficient (OR-causation), the simple counterfactual P(effect | do(¬u)) may equal P(effect | do(u)) because another sufficient cause remains. In this case, apply the **contingent counterfactual**: test P(effect | do(¬u) ∧ do(¬u′)) for each other candidate cause u′. If any combination changes the probability, the edge is valid — u is a genuine cause masked by u′. See the two-stage COUNTERFACTUAL_TEST in **[02_algorithm.md](02_algorithm.md)**.
+
 ---
 
 ## Definition 4 — Root Cause

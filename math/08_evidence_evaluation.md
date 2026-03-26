@@ -190,6 +190,64 @@ An investigation where the evidence cannot be traced is an investigation that ca
 
 ---
 
+## The Investigation as Confounder
+
+In social systems — organizations, teams, communities — the act of investigating changes the system being investigated. This creates a confounder that most frameworks ignore.
+
+**How it happens:**
+
+```
+[Investigation announced] ──► [Behavior changes]
+                               ├─► Witnesses align stories
+                               ├─► Metrics get gamed
+                               ├─► Evidence is "cleaned up"
+                               └─► System state shifts
+```
+
+The evidence gathered *after* the investigation begins is systematically different from the evidence that existed *before* it. Treating them identically corrupts the Bayesian update.
+
+**The Temporal Firewall Protocol:**
+
+```
+1. SEPARATE — divide all evidence into two categories:
+   PRE:   evidence that existed before the investigation was announced
+          (logs, metrics, artifacts, timestamps predating the announcement)
+   POST:  evidence gathered after the investigation was announced
+          (interviews, new measurements, follow-up observations)
+
+2. WEIGHT — pre-investigation evidence gets priority:
+   PRE evidence:  weight normally (Tier 1-4 as usual)
+   POST evidence: apply a reliability discount
+     → Tier 1 (automated logs, sensors): no discount (machines don't change behavior)
+     → Tier 2 (observations): discount if observer knew about the investigation
+     → Tier 3 (inference): no additional discount (already model-dependent)
+     → Tier 4 (testimony): significant discount — witnesses shape narratives
+
+3. DOCUMENT — for every piece of evidence, record:
+   □ Was this evidence captured before or after the investigation began?
+   □ Did the source know an investigation was underway?
+   □ Could the investigation have influenced what is being observed?
+
+4. TEST — when pre and post evidence conflict:
+   → Default to pre-investigation evidence
+   → Post evidence that contradicts pre evidence is a signal:
+     either the system changed, or someone is managing the narrative
+   → Investigate the discrepancy as its own mini-investigation
+```
+
+**When to apply the temporal firewall:**
+- Any investigation involving people's behavior or testimony
+- Organizational or process investigations
+- Investigations where the subjects know they are being investigated
+
+**When it is unnecessary:**
+- Purely technical investigations (logs don't change because you're looking at them)
+- Investigations where all evidence is automated/instrumental (Tier 1)
+
+The temporal firewall does not eliminate the observer effect — it makes the investigation's interaction with the evidence *visible and accountable*.
+
+---
+
 ## Evidence and Bayesian Updating
 
 Evidence quality directly affects the magnitude of your Bayesian update.

@@ -58,17 +58,36 @@ These are different. Observing that it's raining does not cause wet ground. Inte
 
 At every Why node, you are making a causal claim. That claim must meet a minimum standard:
 
-**The Counterfactual Test:**
+**The Counterfactual Test (two-stage):**
+
+**Stage 1 — Simple counterfactual:**
 > "If this Why answer had NOT been true, would the problem still have occurred?"
 
-- If **yes** → this is not the cause. Continue looking.
 - If **no** → this is a genuine causal factor. Record it and continue down.
+- If **yes** → proceed to Stage 2 before discarding.
+
+**Stage 2 — Contingent counterfactual (overdetermination check):**
+> "If this Why answer had NOT been true AND [other candidate cause] had ALSO not been true, would the problem still have occurred?"
+
+Test against each other active cause in the Why tree. If ANY combination returns **no**:
+- This IS a genuine cause — it was **masked** by another independently sufficient cause.
+- Flag both as **overdetermined** (see Overdetermination below).
+
+If ALL combinations still return **yes** → this is genuinely not a cause. Discard.
 
 ```
 Why 3: "The alert threshold was set too high"
-  Counterfactual test: If the threshold had been correct, would the outage still have happened?
+  Stage 1: If the threshold had been correct, would the outage still have happened?
   Answer: No → genuine cause → continue to Why 4
+
+Why 3: "Memory leak in service A"  (another branch also has "Disk full on host B")
+  Stage 1: Without the memory leak, would the crash still have occurred?
+  Answer: Yes (disk was full) → proceed to Stage 2
+  Stage 2: Without the memory leak AND without the disk-full condition?
+  Answer: No → memory leak IS a genuine cause (overdetermined — masked by disk-full)
 ```
+
+Most investigations never reach Stage 2. It triggers only when multiple independently sufficient causes coexist — rare, but critical to catch when it occurs.
 
 ---
 
@@ -83,6 +102,35 @@ A **confounder** is a hidden variable that causes two things to appear related w
 ```
 
 Both the deploy and the crash correlate. But the real cause is the traffic spike. The deploy just happened to coincide with it. Without causal inference discipline, you blame the deploy and fix the wrong thing.
+
+**The investigation itself as a confounder:** In social systems (organizations, teams, communities), the act of investigating can change the system being investigated. Interviews alert people, who change behavior. Metrics get gamed once people know they are being measured. This creates a confounder between pre-investigation evidence and post-investigation evidence. The defense: maintain a **temporal firewall** — clearly separate evidence gathered before the investigation was announced from evidence gathered after. Weight pre-investigation evidence higher, and document when each piece was collected relative to the investigation's start. See **[08_evidence_evaluation.md](08_evidence_evaluation.md)** for the full protocol.
+
+---
+
+## Overdetermination
+
+**Overdetermination** occurs when multiple causes are each independently sufficient to produce the effect. If Cause A alone would produce the problem, and Cause B alone would also produce the problem, then both are genuine causes — but a naive counterfactual test will miss one of them.
+
+```
+[Memory leak] ──────────────► [System crash]
+[Disk full]   ──────────────► [System crash]
+
+Either alone is sufficient. Removing one does not prevent the crash
+(the other is still sufficient). The simple counterfactual test
+incorrectly discards both.
+```
+
+This is why the framework uses a **two-stage counterfactual test** (see "How This Applies to the Framework" above):
+
+- **Stage 1** catches standard causes (independently necessary).
+- **Stage 2** catches overdetermined causes (independently sufficient but masked).
+
+**Root cause interaction type:** Overdetermined causes are **OR-causation** — any one is sufficient. This contrasts with AND-causation (all are necessary). See **[FRAMEWORK.md](../FRAMEWORK.md)** for the full interaction table.
+
+When overdetermined causes are found:
+1. Flag both as genuine root causes
+2. Document the overdetermination relationship
+3. Resolve both — fixing only one leaves the system vulnerable to the other
 
 ---
 
@@ -105,6 +153,10 @@ Both the deploy and the crash correlate. But the real cause is the traffic spike
 | **Do-calculus** | Pearl's formal notation for intervention vs. observation |
 | **DAG** | Directed Acyclic Graph — the mathematical model of causation |
 | **Mechanism** | The process by which a cause produces an effect |
+| **Overdetermination** | Multiple causes each independently sufficient to produce the effect |
+| **OR-causation** | Any single cause is sufficient; contrasts with AND-causation where all are necessary |
+| **Contingent counterfactual** | Stage 2 test: removing multiple causes simultaneously to unmask overdetermined causes |
+| **Temporal firewall** | Separating pre-investigation from post-investigation evidence to control for the investigation itself as a confounder |
 
 ---
 

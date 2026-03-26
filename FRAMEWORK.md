@@ -74,7 +74,7 @@ Apply the counterfactual test to the proposed fix:
 - If **no** → the fix is correctly targeted.
 
 **3. Fix or mitigate?**
-Not every root cause can be eliminated. Some can only be managed.
+Not every root cause can be eliminated. Some can only be managed. Note: the choice of fix vs. mitigate vs. accept is where organizational values, priorities, and resource constraints legitimately enter the framework. Layers 1–2 identify causes based on evidence alone. Layer 3 is where you decide what to do — and that decision may involve trade-offs that are not purely technical.
 
 | Type | Meaning | Example |
 |---|---|---|
@@ -299,15 +299,19 @@ The framework treats root causes as independent items. In reality, root causes c
 | Interaction Type | Description | Example |
 |---|---|---|
 | **AND-causation** | The problem only occurs when both causes are present | Bad config AND missing validation — either alone wouldn't cause the outage |
+| **OR-causation (overdetermination)** | Each cause is independently sufficient — the problem occurs if *any one* is present | Memory leak OR disk full — either alone crashes the system |
 | **Amplification** | One root cause makes another worse | Technical debt amplifies the impact of a bad deploy |
 | **Conflict** | Fixing one root cause worsens another | Fixing speed may worsen reliability |
 
 When multiple root causes are found, ask:
 1. "Would fixing only Root Cause A prevent the problem, even if B remains?" If no → AND-causation.
-2. "Does fixing Root Cause A change the priority of Root Cause B?" If yes → interaction.
-3. "Could fixing Root Cause A make Root Cause B worse?" If yes → conflict.
+2. "Would fixing only Root Cause A prevent the problem, even if B remains — AND vice versa?" If yes to both → OR-causation (overdetermination). Fix both — one alone leaves the system vulnerable.
+3. "Does fixing Root Cause A change the priority of Root Cause B?" If yes → interaction.
+4. "Could fixing Root Cause A make Root Cause B worse?" If yes → conflict.
 
-Document interactions in the resolution layer. AND-causes must be fixed together. Conflicts require sequencing or trade-off decisions.
+Document interactions in the resolution layer. AND-causes must be fixed together. OR-causes (overdetermined) must both be resolved — fixing only one leaves the system vulnerable to the other. Conflicts require sequencing or trade-off decisions.
+
+**Value-separation principle:** Causal identification (Layers 1–2) is evidence-based — the Why tree follows evidence regardless of whether the answers are comfortable. Resolution prioritization (Layer 3) is where values, politics, and trade-offs legitimately enter. Never let Layer 3 preferences distort Layer 2 findings. The investigation must identify what *is* true before deciding what to *do* about it.
 
 ---
 
@@ -498,7 +502,7 @@ ROOT CAUSE C:
   Owner / By When:
   Counterfactual test on fix:
 
-Root cause interactions: [ ] None  [ ] AND-causation  [ ] Amplification  [ ] Conflict
+Root cause interactions: [ ] None  [ ] AND-causation  [ ] OR-causation (overdetermination)  [ ] Amplification  [ ] Conflict
   Details:
 
 Priority order (Impact × Recurrence × Actionability, scale 1–5 each):
